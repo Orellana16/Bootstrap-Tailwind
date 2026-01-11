@@ -1,164 +1,219 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Acuario Ocean Wonders - Visítanos</title>
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-  <link href="style.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style> body { font-family: 'Poppins', sans-serif; background-color: #f0f8ff; } </style>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8fafc;
+    }
+
+    /* Quitar la flecha por defecto de los detalles en Chrome/Safari */
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
 </head>
+
 <body class="text-gray-800 min-h-screen flex flex-col">
 
-  <header class="bg-cyan-700 p-4 text-white shadow-lg sticky top-0 z-50">
-    <div class="max-w-5xl mx-auto flex items-center justify-between">
-      <!-- Título ligeramente mayor en pantallas md+ -->
-      <h1 class="text-2xl md:text-3xl font-bold tracking-wider">🐬 Ocean Wonders</h1>
+  <header class="bg-cyan-800 text-white shadow-xl sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex flex-wrap justify-between items-center">
 
-      <!-- Nav con tamaño de texto aumentado y mejor área táctil -->
-      <nav class="flex gap-6 text-base md:text-lg font-semibold">
+      <div class="flex items-center space-x-2">
+        <span class="text-3xl">🐬</span>
+        <h1 class="text-xl font-bold uppercase tracking-tighter">Ocean Wonders</h1>
+      </div>
+
+      <button class="lg:hidden text-3xl focus:outline-none"
+        onclick="document.getElementById('menu').classList.toggle('hidden')">
+        ☰
+      </button>
+
+      <nav id="menu"
+        class="hidden lg:flex flex-col lg:flex-row w-full lg:w-auto mt-4 lg:mt-0 text-sm font-medium uppercase tracking-widest text-center">
         <a href="tailwind.html"
-           class="px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-yellow-300 transition-colors hover:text-yellow-300">
-           Inicio
-        </a>
-
+          class="block py-4 border-b border-cyan-700 lg:border-none lg:px-4 hover:bg-cyan-700 lg:hover:bg-transparent hover:text-yellow-300 transition-all">Inicio</a>
         <a href="especies.html"
-           class="px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-yellow-300 transition-colors hover:text-yellow-300">
-           Especies
-        </a>
-
+          class="block py-4 border-b border-cyan-700 lg:border-none lg:px-4 hover:bg-cyan-700 lg:hover:bg-transparent hover:text-yellow-300 transition-all">Especies</a>
         <a href="visitanos.html"
-           class="px-2 py-1 rounded text-yellow-300 border-b-2 border-yellow-300 pb-1 focus:outline-none focus:ring-2 focus:ring-yellow-300">
-           Visítanos
-        </a>
-
+          class="block py-4 border-b border-cyan-700 lg:border-none lg:px-4 hover:bg-cyan-700 lg:hover:bg-transparent text-yellow-400">Visítanos</a>
         <a href="contacto.html"
-           class="px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-yellow-300 transition-colors hover:text-yellow-300">
-           Contacto
-        </a>
-
+          class="block py-4 border-b border-cyan-700 lg:border-none lg:px-4 hover:bg-cyan-700 lg:hover:bg-transparent hover:text-yellow-300 transition-all">Contacto</a>
         <a href="sobre-nosotros.html"
-           class="px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-yellow-300 transition-colors hover:text-yellow-300">
-           Sobre Nosotros
-        </a>
+          class="block py-4 lg:border-none lg:px-4 hover:bg-cyan-700 lg:hover:bg-transparent hover:text-yellow-300 transition-all">Sobre Nosotros</a>
       </nav>
+
     </div>
   </header>
 
-  <main class="max-w-4xl mx-auto p-8 my-8 bg-white rounded-xl shadow-md flex-1">
-    <section class="text-center mb-6">
-      <h2 class="text-4xl font-bold text-cyan-800 mb-2">Ven a visitarnos</h2>
-      <p class="text-gray-600">Horarios, entradas, cómo llegar y normas claras para disfrutar con respeto.</p>
-    </section>
+  <div class="relative bg-cyan-700 py-20 text-white text-center px-4 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="fondoFamilia.jpg" class="w-full h-full object-cover opacity-40" alt="Fondo Familia">
+      <div class="absolute inset-0 bg-gradient-to-b from-cyan-800/50 to-cyan-700"></div>
+    </div>
 
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-      <div class="p-6 bg-cyan-50 rounded-lg">
-        <h3 class="text-2xl font-semibold text-cyan-800 mb-3">Horarios</h3>
-        <ul class="text-gray-700 space-y-1">
-          <li><strong>Lunes - Viernes:</strong> 10:00 – 20:00</li>
-          <li><strong>Sábados y Domingos:</strong> 10:00 – 20:00</li>
-          <li><strong>Último acceso:</strong> 1 hora antes del cierre</li>
-        </ul>
-        <div class="mt-4">
-          <a href="contacto.html" class="inline-block px-6 py-2 bg-cyan-600 text-white rounded-full font-semibold hover:bg-cyan-500">Comprar entradas</a>
+    <div class="relative z-10">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-md">Planifica tu Visita</h2>
+      <p class="text-cyan-50 max-w-2xl mx-auto text-lg">Todo lo que necesitas saber para sumergirte en una experiencia
+        inolvidable.</p>
+    </div>
+  </div>
+
+  <main class="container mx-auto px-6 -mt-10 flex-1 relative z-20">
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <div
+        class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-cyan-500 transform hover:-translate-y-1 transition-transform">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">⏰</span>
+          <h3 class="text-2xl font-bold text-slate-800">Horarios</h3>
+        </div>
+        <div class="space-y-4">
+          <div class="flex justify-between border-b border-slate-50 pb-3">
+            <span class="font-medium text-slate-500">Lunes a Viernes</span>
+            <span class="text-cyan-700 font-bold italic">10:00 – 20:00</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-50 pb-3">
+            <span class="font-medium text-slate-500">Fines de Semana</span>
+            <span class="text-cyan-700 font-bold italic">10:00 – 21:00</span>
+          </div>
+          <p class="text-xs text-red-400 font-semibold bg-red-50 p-2 rounded-lg text-center">⚠️ Último acceso 60 min
+            antes del cierre.</p>
+        </div>
+        <button
+          class="w-full mt-8 py-4 bg-cyan-600 text-white font-bold rounded-2xl hover:bg-cyan-700 shadow-lg shadow-cyan-200 transition-all">
+          Comprar Entradas Online
+        </button>
+      </div>
+
+      <div
+        class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-yellow-400 transform hover:-translate-y-1 transition-transform">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🎟️</span>
+          <h3 class="text-2xl font-bold text-slate-800">Tarifas</h3>
+        </div>
+        <div class="space-y-4">
+          <div class="flex justify-between border-b border-slate-50 pb-3">
+            <span class="font-medium text-slate-500">Adultos (+12)</span>
+            <span class="text-slate-800 font-bold text-xl">18 €</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-50 pb-3">
+            <span class="font-medium text-slate-500">Niños (4–12)</span>
+            <span class="text-slate-800 font-bold text-xl">10 €</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-50 pb-3">
+            <span class="font-medium text-slate-600 font-bold">Pack Familiar</span>
+            <span class="text-cyan-600 font-bold text-xl">45 €</span>
+          </div>
+          <p class="text-xs text-slate-400 italic text-center">Menores de 4 años: Entrada Gratuita</p>
         </div>
       </div>
-
-      <div class="p-6 bg-cyan-50 rounded-lg">
-        <h3 class="text-2xl font-semibold text-cyan-800 mb-3">Precios (orientativos)</h3>
-        <ul class="text-gray-700 space-y-1">
-          <li><strong>Adulto:</strong> 18 €</li>
-          <li><strong>Niños (4–12 años):</strong> 10 €</li>
-          <li><strong>Menores de 4 años:</strong> Gratis</li>
-          <li><strong>Familia (2 adultos + 2 niños):</strong> 45 €</li>
-        </ul>
-        <p class="text-sm text-gray-600 mt-2">Descuentos para estudiantes, personas mayores y grupos (consulta condiciones).</p>
-      </div>
     </section>
 
-    <section class="mb-8">
-      <h3 class="text-2xl font-semibold text-cyan-800 mb-3">Dónde estamos</h3>
-
-      <div class="w-full rounded-lg overflow-hidden shadow-md mb-4">
-        <!-- Si tienes un embed de Google Maps, reemplaza el <img> por el iframe -->
-        <img src="https://placehold.co/1200x400/006994/ffffff?text=Mapa+interactivo+del+Acuario" alt="Mapa del acuario" class="w-full object-cover">
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <h4 class="font-semibold text-cyan-800">Dirección</h4>
-          <p class="text-gray-700">Avenida del Mar, 42 — Puerto Central</p>
-
-          <h4 class="font-semibold text-cyan-800 mt-3">Transporte público</h4>
-          <p class="text-gray-700">Línea 5 (parada Acuario), varias líneas de autobús y tranvía cerca.</p>
+    <section class="bg-white rounded-[2rem] shadow-2xl overflow-hidden mb-16 border border-slate-100">
+      <div class="grid grid-cols-1 lg:grid-cols-3">
+        <div class="lg:col-span-2 relative h-80 lg:h-auto min-h-[300px]">
+          <img src="https://placehold.co/1200x600/0891b2/ffffff?text=Mapa+de+Ubicación" alt="Mapa"
+            class="absolute inset-0 w-full h-full object-cover">
         </div>
-
-        <div>
-          <h4 class="font-semibold text-cyan-800">Coche y aparcamiento</h4>
-          <p class="text-gray-700">Aparcamiento público subterráneo a 2 minutos a pie. Zonas para movilidad reducida.</p>
-
-          <h4 class="font-semibold text-cyan-800 mt-3">Bicicleta</h4>
-          <p class="text-gray-700">Aparcabicis gratuito en la entrada principal.</p>
+        <div class="p-10 bg-slate-50">
+          <h3 class="text-2xl font-bold mb-8 text-cyan-900 flex items-center">
+            <span class="mr-3">📍</span> ¿Cómo llegar?
+          </h3>
+          <div class="space-y-8">
+            <div>
+              <p class="text-[10px] font-black uppercase tracking-widest text-cyan-600 mb-1">Dirección</p>
+              <p class="text-slate-700 font-medium">Avenida del Mar, 42 — Puerto de Santa María</p>
+            </div>
+            <div>
+              <p class="text-[10px] font-black uppercase tracking-widest text-cyan-600 mb-1">Transporte Público</p>
+              <ul class="text-slate-700 space-y-1">
+                <li>🚌 Bus: Líneas 5, 12 y 24</li>
+                <li>🚆 Cercanías: Parada "Acuario"</li>
+              </ul>
+            </div>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
+              <p class="text-slate-700 text-sm">🚗 <strong>Parking:</strong> Gratuito durante 3h validando tu entrada en
+                taquilla.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="mb-8">
-      <h3 class="text-2xl font-semibold text-cyan-800 mb-3">Accesibilidad y normas</h3>
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li><strong>Accesible:</strong> Rampas, ascensores y aseos adaptados.</li>
-        <li><strong>Prohibido:</strong> Tocar a los animales, lanzar objetos al agua o alimentar a las especies.</li>
-        <li><strong>Fotos:</strong> Permitidas sin flash.</li>
-        <li><strong>Mascotas:</strong> No se permiten, excepto perros guía.</li>
-        <li><strong>Seguridad:</strong> Sigue las indicaciones del personal en todo momento.</li>
-      </ul>
-    </section>
-
-    <section class="mb-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="p-6 bg-cyan-50 rounded-lg">
-        <h4 class="text-xl font-semibold text-cyan-800 mb-3">Tours y actividades</h4>
-        <p class="text-gray-700 mb-2">Visitas guiadas, charlas educativas y experiencias detrás de cámaras respetuosas con los animales.</p>
-        <ul class="text-gray-700 space-y-1">
-          <li><strong>Tour guiado (45 min):</strong> 5 € extra</li>
-          <li><strong>Visita escolar:</strong> Programas adaptados</li>
-          <li><strong>Eventos privados:</strong> Cumpleaños y reuniones —consultar disponibilidad</li>
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20 px-4">
+      <div>
+        <h3 class="text-2xl font-bold mb-8 text-slate-800 inline-block border-b-4 border-cyan-500 pb-2">Normas de
+          Convivencia</h3>
+        <ul class="space-y-5">
+          <li class="flex items-start bg-white p-4 rounded-2xl shadow-sm">
+            <span
+              class="bg-red-100 text-red-600 rounded-full h-6 w-6 flex items-center justify-center mr-4 mt-1 font-bold text-xs">✕</span>
+            <p class="text-slate-600 text-sm"><strong>Prohibido el Flash:</strong> La luz intensa daña la sensibilidad
+              de muchas especies marinas.</p>
+          </li>
+          <li class="flex items-start bg-white p-4 rounded-2xl shadow-sm">
+            <span
+              class="bg-red-100 text-red-600 rounded-full h-6 w-6 flex items-center justify-center mr-4 mt-1 font-bold text-xs">✕</span>
+            <p class="text-slate-600 text-sm"><strong>Respeto al Cristal:</strong> No golpees los tanques; el sonido se
+              amplifica bajo el agua.</p>
+          </li>
+          <li class="flex items-start bg-white p-4 rounded-2xl shadow-sm">
+            <span
+              class="bg-green-100 text-green-600 rounded-full h-6 w-6 flex items-center justify-center mr-4 mt-1 font-bold text-xs">✓</span>
+            <p class="text-slate-600 text-sm"><strong>Accesibilidad:</strong> Rampas y ascensores disponibles en todo el
+              recorrido.</p>
+          </li>
         </ul>
       </div>
 
-      <div class="p-6 bg-cyan-50 rounded-lg">
-        <h4 class="text-xl font-semibold text-cyan-800 mb-3">Preguntas frecuentes</h4>
+      <div>
+        <h3 class="text-2xl font-bold mb-8 text-slate-800 inline-block border-b-4 border-yellow-400 pb-2">Preguntas
+          Frecuentes</h3>
+        <div class="space-y-3">
+          <details class="group bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden transition-all">
+            <summary class="p-5 cursor-pointer font-semibold flex justify-between items-center hover:bg-slate-50">
+              ¿Hay zona de restauración?
+              <span class="text-cyan-500 group-open:rotate-180 transition-transform duration-300">▼</span>
+            </summary>
+            <div class="px-5 pb-5 text-slate-500 text-sm leading-relaxed border-t border-slate-50 pt-4 bg-slate-50/30">
+              Sí, disponemos de la Cafetería "Coral" y una zona de picnic habilitada para familias.
+            </div>
+          </details>
 
-        <details class="mb-2">
-          <summary class="font-medium cursor-pointer">¿Puedo entrar con comida?</summary>
-          <p class="mt-1 text-gray-700">No dentro de las salas; hay zona de picnic fuera y cafetería en el edificio.</p>
-        </details>
-
-        <details class="mb-2">
-          <summary class="font-medium cursor-pointer">¿Hacen reembolsos por mal tiempo?</summary>
-          <p class="mt-1 text-gray-700">Al estar en interiores, la lluvia no suele ser motivo de devolución. Consulta la política de cancelaciones.</p>
-        </details>
-
-        <details>
-          <summary class="font-medium cursor-pointer">¿Puedo hacer prácticas o voluntariado?</summary>
-          <p class="mt-1 text-gray-700">Sí. Envía CV y carta de motivación a <a href="mailto:info@oceanwonders.example" class="text-cyan-700 underline">info@oceanwonders.example</a>.</p>
-        </details>
+          <details class="group bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden transition-all">
+            <summary class="p-5 cursor-pointer font-semibold flex justify-between items-center hover:bg-slate-50">
+              ¿Cuánto dura el recorrido?
+              <span class="text-cyan-500 group-open:rotate-180 transition-transform duration-300">▼</span>
+            </summary>
+            <div class="px-5 pb-5 text-slate-500 text-sm leading-relaxed border-t border-slate-50 pt-4 bg-slate-50/30">
+              La duración media es de 2 horas, pero puedes quedarte todo el tiempo que desees hasta el cierre.
+            </div>
+          </details>
+        </div>
       </div>
     </section>
 
-    <section class="text-center">
-      <h3 class="text-2xl font-semibold text-cyan-800 mb-3">Contacto y reservas</h3>
-      <p class="text-gray-700 mb-4">Teléfono: <strong>+34 900 123 456</strong> • Email: <a href="mailto:reservas@oceanwonders.example" class="text-cyan-700 underline">reservas@oceanwonders.example</a></p>
-      <a href="contacto.html" class="inline-block px-6 py-3 bg-cyan-600 text-white rounded-full font-semibold hover:bg-cyan-500">Reservar/Consultar</a>
-    </section>
   </main>
 
-  <footer class="bg-cyan-900 text-cyan-100 text-center p-6">
-    <p>&copy; 2026 Acuario Ocean Wonders. Cuidamos nuestros océanos.</p>
+  <footer class="bg-slate-900 text-slate-500 py-12 px-6 border-t border-slate-800">
+    <div class="container mx-auto text-center">
+      <p class="text-white font-bold mb-2 tracking-widest uppercase italic text-lg">Ocean Wonders</p>
+      <p class="text-xs mb-8 max-w-sm mx-auto">Educando sobre la importancia de la conservación marina desde 2010.</p>
+      <div class="border-t border-slate-800 pt-8 text-[10px] uppercase tracking-[0.2em]">
+        &copy; 2026 Acuario Ocean Wonders • Todos los derechos reservados
+      </div>
+    </div>
   </footer>
 
 </body>
+
 </html>

@@ -1,183 +1,233 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Acuario Ocean Wonders - Especies</title>
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-  <link href="style.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: 'Poppins', sans-serif; background-color: #f0f8ff; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8fafc;
+      scroll-behavior: smooth;
+    }
+
+    .species-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .badge {
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 0.5rem 0.5rem;
+      border-radius: 0.375rem;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
   </style>
 </head>
+
 <body class="text-gray-800 min-h-screen flex flex-col">
 
-  <header class="bg-cyan-700 p-4 text-white shadow-lg sticky top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold tracking-wider">🐬 Ocean Wonders</h1>
-      <nav class="flex space-x-6 font-semibold">
-        <a href="tailwind.html" class="hover:text-yellow-300 transition-colors border-b-2 border-transparent hover:border-yellow-300">Inicio</a>
-        <a href="especies.html" class="hover:text-yellow-300 transition-colors border-b-2 border-transparent hover:border-yellow-300">Especies</a>
-        <a href="visitanos.html" class="hover:text-yellow-300 transition-colors border-b-2 border-transparent hover:border-yellow-300">Visítanos</a>
-        <a href="contacto.html" class="hover:text-yellow-300 transition-colors border-b-2 border-transparent hover:border-yellow-300">Contacto</a>
-        <a href="sobre-nosotros.html" class="hover:text-yellow-300 transition-colors border-b-2 border-transparent hover:border-yellow-300">Sobre Nosotros</a>
+  <header class="bg-cyan-800 text-white shadow-xl sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex flex-wrap justify-between items-center">
+
+      <a href="tailwind.html" class="flex items-center space-x-2">
+        <span class="text-3xl">🐬</span>
+        <h1 class="text-xl font-bold uppercase tracking-tighter">Ocean Wonders</h1>
+      </a>
+
+      <button class="lg:hidden text-3xl focus:outline-none"
+        onclick="document.getElementById('menu').classList.toggle('hidden')">
+        ☰
+      </button>
+
+      <nav id="menu"
+        class="hidden lg:flex flex-col lg:flex-row w-full lg:w-auto mt-4 lg:mt-0 text-sm font-medium uppercase tracking-widest text-center">
+        <a href="tailwind.html"
+          class="block py-4 border-b border-cyan-700 lg:border-none lg:px-4 hover:bg-cyan-700 lg:hover:bg-transparent hover:text-yellow-300 transition-all">Inicio</a>
+        <a href="especies.html"
+          class="block py-4 border-b border-cyan-700 lg:border-none lg:px-4 hover:bg-cyan-700 lg:hover:bg-transparent text-yellow-400">Especies</a>
+        <a href="visitanos.html"
+          class="block py-4 border-b border-cyan-700 lg:border-none lg:px-4 hover:bg-cyan-700 lg:hover:bg-transparent hover:text-yellow-300 transition-all">Visítanos</a>
+        <a href="contacto.html"
+          class="block py-4 border-b border-cyan-700 lg:border-none lg:px-4 hover:bg-cyan-700 lg:hover:bg-transparent hover:text-yellow-300 transition-all">Contacto</a>
+        <a href="sobre-nosotros.html"
+          class="block py-4 lg:border-none lg:px-4 hover:bg-cyan-700 lg:hover:bg-transparent hover:text-yellow-300 transition-all">Sobre Nosotros</a>
       </nav>
+
     </div>
   </header>
 
-  <main class="max-w-6xl mx-auto p-8 my-8 bg-white rounded-xl shadow-md flex-1">
-    <section class="text-center mb-8">
-      <h2 class="text-4xl font-bold text-cyan-800 mb-2">Nuestras especies</h2>
-      <p class="text-gray-600 max-w-3xl mx-auto">Aquí tienes una selección sencilla y clara de animales que puedes ver en Ocean Wonders: dónde viven, qué comen y por qué nos importan.</p>
-    </section>
+  <section class="relative bg-cyan-700 py-20 text-white text-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="especiesFondo.jpg" class="w-full h-full object-cover opacity-20" alt="Fondo Marino">
+      <div class="absolute inset-0 bg-cyan-900/30"></div>
+    </div>
 
-    <nav class="flex justify-center gap-3 mb-8">
-      <a href="#peces" class="px-4 py-2 rounded-full bg-cyan-600 text-white font-medium hover:bg-cyan-500">Peces</a>
-      <a href="#invertebrados" class="px-4 py-2 rounded-full bg-cyan-100 text-cyan-800 font-medium hover:bg-cyan-50">Invertebrados</a>
-      <a href="#mamiferos" class="px-4 py-2 rounded-full bg-cyan-100 text-cyan-800 font-medium hover:bg-cyan-50">Mamíferos</a>
-    </nav>
+    <div class="container mx-auto px-6 relative z-10">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Nuestros Habitantes</h2>
+      <p class="text-cyan-50 max-w-2xl mx-auto text-lg">
+        Descubre la biodiversidad que cuidamos. Cada especie cuenta una historia vital sobre la salud de nuestros
+        océanos.
+      </p>
 
-    <!-- PECES -->
-    <section id="peces" class="mb-10">
-      <h3 class="text-2xl font-semibold text-cyan-800 mb-4">Peces destacados</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Tiburón martillo -->
-        <article class="bg-white rounded-lg shadow overflow-hidden">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAU1G07mBCg41w44hmqXu1UoxH6QchBstzUI8qfCl005xAhvysXMv7kIfah1FqoHSQe9fjLluQJRpkiBY3iTSbpGCScZqOgzlzRfbYHQ&s=10" alt="Tiburón martillo" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h4 class="font-bold text-lg">Tiburón martillo</h4>
-            <p class="text-sm text-gray-600 mb-2">Depredador con cabeza en forma de 'T'. Fascinante de observar y muy importante para el equilibrio marino.</p>
-            <ul class="text-sm text-gray-700 space-y-1">
-              <li><strong>Hábitat:</strong> Aguas templadas y arrecifes.</li>
-              <li><strong>Tamaño:</strong> 4–6 m (según especie).</li>
-              <li><strong>Dieta:</strong> Peces y cefalópodos.</li>
-            </ul>
-          </div>
-        </article>
+      <nav class="flex flex-wrap justify-center gap-4 mt-10">
+        <a href="#peces"
+          class="px-6 py-2 rounded-full bg-white/10 hover:bg-cyan-500 border border-white/30 transition-all text-sm font-semibold backdrop-blur-md">
+          🐟 Peces
+        </a>
+        <a href="#invertebrados"
+          class="px-6 py-2 rounded-full bg-white/10 hover:bg-cyan-500 border border-white/30 transition-all text-sm font-semibold backdrop-blur-md">
+          🐙 Invertebrados
+        </a>
+        <a href="#otros"
+          class="px-6 py-2 rounded-full bg-white/10 hover:bg-cyan-500 border border-white/30 transition-all text-sm font-semibold backdrop-blur-md">
+          🐢 Otros
+        </a>
+      </nav>
+    </div>
+  </section>
 
-        <!-- Pez payaso -->
-        <article class="bg-white rounded-lg shadow overflow-hidden">
-          <img src="https://static.miscota.com/consejos/wp-content/uploads/2016/12/shutterstock_343324223.jpg" alt="Pez payaso" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h4 class="font-bold text-lg">Pez payaso</h4>
-            <p class="text-sm text-gray-600 mb-2">Pequeño, colorido y conocido por su relación con las anémonas.</p>
-            <ul class="text-sm text-gray-700 space-y-1">
-              <li><strong>Hábitat:</strong> Arrecifes tropicales.</li>
-              <li><strong>Tamaño:</strong> 6–11 cm.</li>
-              <li><strong>Dieta:</strong> Algas y pequeños invertebrados.</li>
-            </ul>
-          </div>
-        </article>
+  <main class="container mx-auto px-6 py-12 flex-1">
 
-        <!-- Delfín -->
-        <article class="bg-white rounded-lg shadow overflow-hidden">
-          <img src="https://pymstatic.com/17949/conversions/inteligencia-de-delfines-wide.jpg" alt="Delfín nariz de botella" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h4 class="font-bold text-lg">Delfín nariz de botella</h4>
-            <p class="text-sm text-gray-600 mb-2">Juguetones y sociales; suelen ser las estrellas de las charlas educativas.</p>
-            <ul class="text-sm text-gray-700 space-y-1">
-              <li><strong>Hábitat:</strong> Costas y bahías.</li>
-              <li><strong>Tamaño:</strong> 2–4 m.</li>
-              <li><strong>Dieta:</strong> Peces y calamares.</li>
-            </ul>
-          </div>
-        </article>
+    <section id="peces" class="mb-20">
+      <div class="flex items-center mb-8">
+        <h3 class="text-3xl font-bold text-slate-800 mr-4">Peces Destacados</h3>
+        <div class="h-1 flex-1 bg-gradient-to-r from-cyan-500 to-transparent"></div>
       </div>
-    </section>
 
-    <!-- INVERTEBRADOS -->
-    <section id="invertebrados" class="mb-10">
-      <h3 class="text-2xl font-semibold text-cyan-800 mb-4">Invertebrados</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article class="bg-white rounded-lg shadow overflow-hidden">
-          <img src="https://nubika.es/_ipx/f_webp&q_80&s_754x378/https://cdn.nubika.es/wp-content/uploads/2024/03/11100838/de-que-se-alimenta-una-medusa.png" alt="Medusa" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h4 class="font-bold text-lg">Medusa</h4>
-            <p class="text-sm text-gray-600 mb-2">Movimientos hipnóticos; sus tentáculos capturan el plancton.</p>
-            <ul class="text-sm text-gray-700 space-y-1">
-              <li><strong>Hábitat:</strong> Aguas frías y templadas.</li>
-              <li><strong>Dieta:</strong> Plancton y pequeños peces.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="bg-white rounded-lg shadow overflow-hidden">
-          <img src="https://www.ambientum.com/wp-content/uploads/2024/07/estrellas-de-mar-696x461.jpg" alt="Estrella de mar" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h4 class="font-bold text-lg">Estrella de mar</h4>
-            <p class="text-sm text-gray-600 mb-2">Capaces de regenerar brazos y con formas curiosas de alimentarse.</p>
-            <ul class="text-sm text-gray-700 space-y-1">
-              <li><strong>Hábitat:</strong> Fondos rocosos y arenas.</li>
-              <li><strong>Tamaño:</strong> 5–40 cm.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="bg-white rounded-lg shadow overflow-hidden">
-          <img src="https://kuakimermaids.com/modules/leoblog/views/img/b/b-arrecifes-coral-mas-bonitos.jpg" alt="Coral" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h4 class="font-bold text-lg">Coral (arrecife)</h4>
-            <p class="text-sm text-gray-600 mb-2">No es un pez: son animales que forman un ecosistema vital para miles de especies.</p>
-            <ul class="text-sm text-gray-700 space-y-1">
-              <li><strong>Importancia:</strong> Refugio y alimento para muchas especies.</li>
-              <li><strong>Estado:</strong> Muy sensible al calentamiento y la contaminación.</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- MAMÍFEROS -->
-    <section id="mamiferos" class="mb-10">
-      <h3 class="text-2xl font-semibold text-cyan-800 mb-4">Mamíferos marinos</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <!-- Tortuga -->
-        <article class="bg-white rounded-lg shadow flex flex-col sm:flex-row items-start">
-          <div class="w-full sm:w-1/3 flex-shrink-0">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <article
+          class="species-card bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all group">
+          <div class="relative overflow-hidden h-56">
             <img
-              src="https://allyouneedisbiology.wordpress.com/wp-content/uploads/2015/07/martin_caretta_2000x13391.jpg?w=1038&h=576&crop=1"
-              alt="Tortuga marina"
-              class="w-full h-48 object-cover rounded-t-lg sm:rounded-t-none sm:rounded-l-lg"/>
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAU1G07mBCg41w44hmqXu1UoxH6QchBstzUI8qfCl005xAhvysXMv7kIfah1FqoHSQe9fjLluQJRpkiBY3iTSbpGCScZqOgzlzRfbYHQ&s=10"
+              class="w-full h-full object-cover transition-transform duration-500">
+            <span
+              class="absolute top-4 left-4 bg-red-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Depredador</span>
           </div>
-          <div class="p-4">
-            <h4 class="font-bold text-lg">Tortuga marina</h4>
-            <p class="text-sm text-gray-600 mb-2">Lentas en tierra, majestuosas en el agua. Es vital proteger playas y zonas de alimentación.</p>
-            <ul class="text-sm text-gray-700 space-y-1">
-              <li><strong>Hábitat:</strong> Arrecifes y praderas marinas.</li>
-              <li><strong>Estado:</strong> Vulnerable.</li>
-            </ul>
+          <div class="p-6">
+            <h4 class="text-xl font-bold text-slate-800 mb-2">Tiburón Martillo</h4>
+            <p class="text-gray-600 text-sm mb-4">Posee una visión de 360 grados gracias a su característica cabeza.</p>
+            <div class="grid grid-cols-2 gap-2 text-[11px] font-semibold text-cyan-700 uppercase">
+              <span class="bg-cyan-50 p-2 rounded-lg">🌊 Templadas</span>
+              <span class="bg-cyan-50 p-2 rounded-lg">📏 4 - 6 Metros</span>
+            </div>
           </div>
         </article>
 
-        <!-- Foca -->
-        <article class="bg-white rounded-lg shadow flex flex-col sm:flex-row items-start">
-          <div class="w-full sm:w-1/3 flex-shrink-0">
-            <img
-              src="https://www.coruna.gal/IMG/P_Entidad_1149055945968_1152702150702_1200_1280_U_85d74f36899d3303c107caa9f74b7.png" alt="Foca" class="w-full h-48 object-cover rounded-t-lg sm:rounded-t-none sm:rounded-l-lg"/>
+        <article
+          class="species-card bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all group">
+          <div class="relative overflow-hidden h-56">
+            <img src="https://static.miscota.com/consejos/wp-content/uploads/2016/12/shutterstock_343324223.jpg"
+              class="w-full h-full object-cover transition-transform duration-500">
+            <span
+              class="absolute top-4 left-4 bg-orange-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Tropical</span>
           </div>
-          <div class="p-4">
-            <h4 class="font-bold text-lg">Foca</h4>
-            <p class="text-sm text-gray-600 mb-2">Mamíferos adaptados al mar, con comportamiento social variado.</p>
-            <ul class="text-sm text-gray-700 space-y-1">
-              <li><strong>Hábitat:</strong> Costas y plataformas rocosas.</li>
-              <li><strong>Dieta:</strong> Peces y crustáceos.</li>
-            </ul>
+          <div class="p-6">
+            <h4 class="text-xl font-bold text-slate-800 mb-2">Pez Payaso</h4>
+            <p class="text-gray-600 text-sm mb-4">Famoso por vivir protegido entre los tentáculos de las anémonas.</p>
+            <div class="grid grid-cols-2 gap-2 text-[11px] font-semibold text-cyan-700 uppercase">
+              <span class="bg-cyan-50 p-2 rounded-lg">🌊 Arrecifes</span>
+              <span class="bg-cyan-50 p-2 rounded-lg">📏 10 Centímetros</span>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="species-card bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all group">
+          <div class="relative overflow-hidden h-56">
+            <img src="https://pymstatic.com/17949/conversions/inteligencia-de-delfines-wide.jpg"
+              class="w-full h-full object-cover transition-transform duration-500">
+            <span
+              class="absolute top-4 left-4 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Inteligente</span>
+          </div>
+          <div class="p-6">
+            <h4 class="text-xl font-bold text-slate-800 mb-2">Delfín Mular</h4>
+            <p class="text-gray-600 text-sm mb-4">Animales altamente sociales conocidos por su asombrosa inteligencia.
+            </p>
+            <div class="grid grid-cols-2 gap-2 text-[11px] font-semibold text-cyan-700 uppercase">
+              <span class="bg-cyan-50 p-2 rounded-lg">🌊 Océanos</span>
+              <span class="bg-cyan-50 p-2 rounded-lg">📏 2.5 Metros</span>
+            </div>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="mt-8 text-sm text-gray-600">
-      <p><strong>Dato práctico:</strong> Si algo te llama la atención, apúntalo y pregunta al equipo del acuario —te contarán historias y datos curiosos.</p>
+    <section id="invertebrados" class="mb-20">
+      <div class="flex items-center mb-8">
+        <h3 class="text-3xl font-bold text-slate-800 mr-4">Invertebrados</h3>
+        <div class="h-1 flex-1 bg-gradient-to-r from-purple-500 to-transparent"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <article class="species-card bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100">
+          <img
+            src="https://nubika.es/_ipx/f_webp&q_80&s_754x378/https://cdn.nubika.es/wp-content/uploads/2024/03/11100838/de-que-se-alimenta-una-medusa.png"
+            class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h4 class="font-bold text-lg text-slate-800">Medusa Luna</h4>
+            <p class="text-xs text-purple-600 font-bold mb-2 tracking-widest">95% AGUA</p>
+            <p class="text-gray-500 text-sm">Criaturas ancestrales que carecen de cerebro pero sobreviven con éxito.</p>
+          </div>
+        </article>
+        <article class="species-card bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100">
+          <img src="https://www.ambientum.com/wp-content/uploads/2024/07/estrellas-de-mar-696x461.jpg"
+            class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h4 class="font-bold text-lg text-slate-800">Estrella de Mar</h4>
+            <p class="text-xs text-purple-600 font-bold mb-2 tracking-widest">REGENERATIVA</p>
+            <p class="text-gray-500 text-sm">Pueden regenerar sus extremidades y no tienen sangre.</p>
+          </div>
+        </article>
+      </div>
     </section>
+
+    <section id="otros"
+      class="bg-slate-900 rounded-[3rem] p-8 md:p-12 text-white flex flex-col md:flex-row items-center gap-8">
+      <img
+        src="https://allyouneedisbiology.wordpress.com/wp-content/uploads/2015/07/martin_caretta_2000x13391.jpg?w=1038&h=576&crop=1"
+        class="w-full md:w-1/3 h-64 object-cover rounded-2xl shadow-2xl">
+      <div>
+        <span
+          class="bg-yellow-400 text-black px-3 py-1 rounded-full text-[10px] font-bold uppercase mb-4 inline-block">Especie
+          Protegida</span>
+        <h3 class="text-3xl font-bold mb-4">Tortuga Caretta Caretta</h3>
+        <p class="text-gray-300 mb-6 italic leading-relaxed">"Ayudamos en la recuperación de tortugas heridas para
+          devolverlas a su hogar natural."</p>
+        <div class="flex gap-4">
+          <div class="bg-white/10 p-4 rounded-2xl text-center flex-1">
+            <p class="text-2xl font-bold text-cyan-400">85%</p>
+            <p class="text-[10px] uppercase text-gray-400">Éxito Rescate</p>
+          </div>
+          <div class="bg-white/10 p-4 rounded-2xl text-center flex-1">
+            <p class="text-2xl font-bold text-cyan-400">120+</p>
+            <p class="text-[10px] uppercase text-gray-400">Liberadas</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="bg-cyan-900 text-cyan-100 text-center p-6">
-    <p>&copy; 2026 Acuario Ocean Wonders. Cuidamos nuestros océanos.</p>
+  <footer class="bg-slate-900 text-slate-400 py-12 px-6 mt-12 border-t border-slate-800">
+    <div class="container mx-auto text-center">
+      <p class="text-white font-bold mb-2 tracking-widest uppercase italic">Ocean Wonders</p>
+      <div class="flex justify-center gap-6 my-4 text-xs">
+        <a href="#" class="hover:text-cyan-400">Instagram</a>
+        <a href="#" class="hover:text-cyan-400">Youtube</a>
+        <a href="#" class="hover:text-cyan-400">Facebook</a>
+      </div>
+      <p class="text-[10px] uppercase tracking-tighter">&copy; 2026 Acuario Ocean Wonders.</p>
+    </div>
   </footer>
+
 </body>
+
 </html>

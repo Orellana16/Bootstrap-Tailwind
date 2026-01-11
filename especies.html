@@ -34,24 +34,33 @@
 
 <body class="text-gray-800 min-h-screen flex flex-col">
 
-  <header class="bg-cyan-800/95 backdrop-blur-sm text-white shadow-xl sticky top-0 z-50">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="flex items-center space-x-2">
+  <header class="bg-cyan-800 text-white shadow-xl sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex flex-wrap justify-between items-center">
+
+      <a href="tailwind.html" class="flex items-center space-x-2">
         <span class="text-3xl">🐬</span>
-        <h1 class="text-xl md:text-2xl font-bold tracking-tighter uppercase">Ocean Wonders</h1>
-      </div>
-      <nav class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
+        <h1 class="text-xl font-bold uppercase tracking-tighter">Ocean Wonders</h1>
+      </a>
+
+      <button class="lg:hidden text-3xl focus:outline-none"
+        onclick="document.getElementById('menu').classList.toggle('hidden')">
+        ☰
+      </button>
+
+      <nav id="menu"
+        class="hidden lg:flex flex-col lg:flex-row w-full lg:w-auto mt-4 lg:mt-0 text-sm font-medium uppercase tracking-widest text-center">
         <a href="tailwind.html"
-          class="hover:text-yellow-300 transition-colors pb-1 border-b-2 border-transparent hover:border-yellow-300">Inicio</a>
-        <a href="especies.html" class="text-yellow-400 border-b-2 border-yellow-400 pb-1">Especies</a>
+          class="block py-4 border-b border-cyan-700 lg:border-none lg:px-4 hover:bg-cyan-700 lg:hover:bg-transparent hover:text-yellow-300 transition-all">Inicio</a>
+        <a href="especies.html"
+          class="block py-4 border-b border-cyan-700 lg:border-none lg:px-4 hover:bg-cyan-700 lg:hover:bg-transparent text-yellow-400">Especies</a>
         <a href="visitanos.html"
-          class="hover:text-yellow-300 transition-colors pb-1 border-b-2 border-transparent hover:border-yellow-300">Visítanos</a>
+          class="block py-4 border-b border-cyan-700 lg:border-none lg:px-4 hover:bg-cyan-700 lg:hover:bg-transparent hover:text-yellow-300 transition-all">Visítanos</a>
         <a href="contacto.html"
-          class="hover:text-yellow-300 transition-colors pb-1 border-b-2 border-transparent hover:border-yellow-300">Contacto</a>
+          class="block py-4 border-b border-cyan-700 lg:border-none lg:px-4 hover:bg-cyan-700 lg:hover:bg-transparent hover:text-yellow-300 transition-all">Contacto</a>
         <a href="sobre-nosotros.html"
-          class="hover:text-yellow-300 transition-colors pb-1 border-b-2 border-transparent hover:border-yellow-300">Sobre
-          Nosotros</a>
+          class="block py-4 lg:border-none lg:px-4 hover:bg-cyan-700 lg:hover:bg-transparent hover:text-yellow-300 transition-all">Sobre Nosotros</a>
       </nav>
+
     </div>
   </header>
 

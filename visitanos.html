@@ -24,19 +24,33 @@
 
 <body class="text-gray-800 min-h-screen flex flex-col">
 
-  <header class="bg-cyan-800/95 backdrop-blur-sm text-white shadow-xl sticky top-0 z-50">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+  <header class="bg-cyan-800 text-white shadow-xl sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex flex-wrap justify-between items-center">
+
       <div class="flex items-center space-x-2">
         <span class="text-3xl">🐬</span>
-        <h1 class="text-xl md:text-2xl font-bold tracking-tighter uppercase">Ocean Wonders</h1>
+        <h1 class="text-xl font-bold uppercase tracking-tighter">Ocean Wonders</h1>
       </div>
-      <nav class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
-        <a href="tailwind.html" class="hover:text-yellow-300 transition-colors pb-1 border-b-2 border-transparent hover:border-yellow-300">Inicio</a>
-        <a href="especies.html" class="hover:text-yellow-300 transition-colors pb-1 border-b-2 border-transparent hover:border-yellow-300">Especies</a>
-        <a href="visitanos.html" class="text-yellow-400 border-b-2 border-yellow-400 pb-1">Visítanos</a>
-        <a href="contacto.html" class="hover:text-yellow-300 transition-colors pb-1 border-b-2 border-transparent hover:border-yellow-300">Contacto</a>
-        <a href="sobre-nosotros.html" class="hover:text-yellow-300 transition-colors pb-1 border-b-2 border-transparent hover:border-yellow-300">Sobre Nosotros</a>
+
+      <button class="lg:hidden text-3xl focus:outline-none"
+        onclick="document.getElementById('menu').classList.toggle('hidden')">
+        ☰
+      </button>
+
+      <nav id="menu"
+        class="hidden lg:flex flex-col lg:flex-row w-full lg:w-auto mt-4 lg:mt-0 text-sm font-medium uppercase tracking-widest text-center">
+        <a href="tailwind.html"
+          class="block py-4 border-b border-cyan-700 lg:border-none lg:px-4 hover:bg-cyan-700 lg:hover:bg-transparent hover:text-yellow-300 transition-all">Inicio</a>
+        <a href="especies.html"
+          class="block py-4 border-b border-cyan-700 lg:border-none lg:px-4 hover:bg-cyan-700 lg:hover:bg-transparent hover:text-yellow-300 transition-all">Especies</a>
+        <a href="visitanos.html"
+          class="block py-4 border-b border-cyan-700 lg:border-none lg:px-4 hover:bg-cyan-700 lg:hover:bg-transparent text-yellow-400">Visítanos</a>
+        <a href="contacto.html"
+          class="block py-4 border-b border-cyan-700 lg:border-none lg:px-4 hover:bg-cyan-700 lg:hover:bg-transparent hover:text-yellow-300 transition-all">Contacto</a>
+        <a href="sobre-nosotros.html"
+          class="block py-4 lg:border-none lg:px-4 hover:bg-cyan-700 lg:hover:bg-transparent hover:text-yellow-300 transition-all">Sobre Nosotros</a>
       </nav>
+
     </div>
   </header>
 
@@ -45,17 +59,19 @@
       <img src="fondoFamilia.jpg" class="w-full h-full object-cover opacity-40" alt="Fondo Familia">
       <div class="absolute inset-0 bg-gradient-to-b from-cyan-800/50 to-cyan-700"></div>
     </div>
-    
+
     <div class="relative z-10">
       <h2 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-md">Planifica tu Visita</h2>
-      <p class="text-cyan-50 max-w-2xl mx-auto text-lg">Todo lo que necesitas saber para sumergirte en una experiencia inolvidable.</p>
+      <p class="text-cyan-50 max-w-2xl mx-auto text-lg">Todo lo que necesitas saber para sumergirte en una experiencia
+        inolvidable.</p>
     </div>
   </div>
 
   <main class="container mx-auto px-6 -mt-10 flex-1 relative z-20">
 
     <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-      <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-cyan-500 transform hover:-translate-y-1 transition-transform">
+      <div
+        class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-cyan-500 transform hover:-translate-y-1 transition-transform">
         <div class="flex items-center mb-6">
           <span class="text-4xl mr-4">⏰</span>
           <h3 class="text-2xl font-bold text-slate-800">Horarios</h3>
@@ -69,14 +85,17 @@
             <span class="font-medium text-slate-500">Fines de Semana</span>
             <span class="text-cyan-700 font-bold italic">10:00 – 21:00</span>
           </div>
-          <p class="text-xs text-red-400 font-semibold bg-red-50 p-2 rounded-lg text-center">⚠️ Último acceso 60 min antes del cierre.</p>
+          <p class="text-xs text-red-400 font-semibold bg-red-50 p-2 rounded-lg text-center">⚠️ Último acceso 60 min
+            antes del cierre.</p>
         </div>
-        <button class="w-full mt-8 py-4 bg-cyan-600 text-white font-bold rounded-2xl hover:bg-cyan-700 shadow-lg shadow-cyan-200 transition-all">
+        <button
+          class="w-full mt-8 py-4 bg-cyan-600 text-white font-bold rounded-2xl hover:bg-cyan-700 shadow-lg shadow-cyan-200 transition-all">
           Comprar Entradas Online
         </button>
       </div>
 
-      <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-yellow-400 transform hover:-translate-y-1 transition-transform">
+      <div
+        class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-yellow-400 transform hover:-translate-y-1 transition-transform">
         <div class="flex items-center mb-6">
           <span class="text-4xl mr-4">🎟️</span>
           <h3 class="text-2xl font-bold text-slate-800">Tarifas</h3>
@@ -102,7 +121,8 @@
     <section class="bg-white rounded-[2rem] shadow-2xl overflow-hidden mb-16 border border-slate-100">
       <div class="grid grid-cols-1 lg:grid-cols-3">
         <div class="lg:col-span-2 relative h-80 lg:h-auto min-h-[300px]">
-          <img src="https://placehold.co/1200x600/0891b2/ffffff?text=Mapa+de+Ubicación" alt="Mapa" class="absolute inset-0 w-full h-full object-cover">
+          <img src="https://placehold.co/1200x600/0891b2/ffffff?text=Mapa+de+Ubicación" alt="Mapa"
+            class="absolute inset-0 w-full h-full object-cover">
         </div>
         <div class="p-10 bg-slate-50">
           <h3 class="text-2xl font-bold mb-8 text-cyan-900 flex items-center">
@@ -121,7 +141,8 @@
               </ul>
             </div>
             <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
-              <p class="text-slate-700 text-sm">🚗 <strong>Parking:</strong> Gratuito durante 3h validando tu entrada en taquilla.</p>
+              <p class="text-slate-700 text-sm">🚗 <strong>Parking:</strong> Gratuito durante 3h validando tu entrada en
+                taquilla.</p>
             </div>
           </div>
         </div>
@@ -130,25 +151,33 @@
 
     <section class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20 px-4">
       <div>
-        <h3 class="text-2xl font-bold mb-8 text-slate-800 inline-block border-b-4 border-cyan-500 pb-2">Normas de Convivencia</h3>
+        <h3 class="text-2xl font-bold mb-8 text-slate-800 inline-block border-b-4 border-cyan-500 pb-2">Normas de
+          Convivencia</h3>
         <ul class="space-y-5">
           <li class="flex items-start bg-white p-4 rounded-2xl shadow-sm">
-            <span class="bg-red-100 text-red-600 rounded-full h-6 w-6 flex items-center justify-center mr-4 mt-1 font-bold text-xs">✕</span>
-            <p class="text-slate-600 text-sm"><strong>Prohibido el Flash:</strong> La luz intensa daña la sensibilidad de muchas especies marinas.</p>
+            <span
+              class="bg-red-100 text-red-600 rounded-full h-6 w-6 flex items-center justify-center mr-4 mt-1 font-bold text-xs">✕</span>
+            <p class="text-slate-600 text-sm"><strong>Prohibido el Flash:</strong> La luz intensa daña la sensibilidad
+              de muchas especies marinas.</p>
           </li>
           <li class="flex items-start bg-white p-4 rounded-2xl shadow-sm">
-            <span class="bg-red-100 text-red-600 rounded-full h-6 w-6 flex items-center justify-center mr-4 mt-1 font-bold text-xs">✕</span>
-            <p class="text-slate-600 text-sm"><strong>Respeto al Cristal:</strong> No golpees los tanques; el sonido se amplifica bajo el agua.</p>
+            <span
+              class="bg-red-100 text-red-600 rounded-full h-6 w-6 flex items-center justify-center mr-4 mt-1 font-bold text-xs">✕</span>
+            <p class="text-slate-600 text-sm"><strong>Respeto al Cristal:</strong> No golpees los tanques; el sonido se
+              amplifica bajo el agua.</p>
           </li>
           <li class="flex items-start bg-white p-4 rounded-2xl shadow-sm">
-            <span class="bg-green-100 text-green-600 rounded-full h-6 w-6 flex items-center justify-center mr-4 mt-1 font-bold text-xs">✓</span>
-            <p class="text-slate-600 text-sm"><strong>Accesibilidad:</strong> Rampas y ascensores disponibles en todo el recorrido.</p>
+            <span
+              class="bg-green-100 text-green-600 rounded-full h-6 w-6 flex items-center justify-center mr-4 mt-1 font-bold text-xs">✓</span>
+            <p class="text-slate-600 text-sm"><strong>Accesibilidad:</strong> Rampas y ascensores disponibles en todo el
+              recorrido.</p>
           </li>
         </ul>
       </div>
 
       <div>
-        <h3 class="text-2xl font-bold mb-8 text-slate-800 inline-block border-b-4 border-yellow-400 pb-2">Preguntas Frecuentes</h3>
+        <h3 class="text-2xl font-bold mb-8 text-slate-800 inline-block border-b-4 border-yellow-400 pb-2">Preguntas
+          Frecuentes</h3>
         <div class="space-y-3">
           <details class="group bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden transition-all">
             <summary class="p-5 cursor-pointer font-semibold flex justify-between items-center hover:bg-slate-50">
@@ -186,4 +215,5 @@
   </footer>
 
 </body>
+
 </html>

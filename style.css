@@ -1,10 +1,4 @@
-/* style.css — CSS reducido para los archivos proporcionados
-   Contiene sólo reglas usadas en tailwind.html, especies.html, sobre-nosotros.html y contacto.html
-*/
-
-/* ---------------------------
-   Reset / base (mínimo)
-   --------------------------- */
+/* reset base*/
 *,
 ::before,
 ::after {
@@ -25,14 +19,14 @@ html {
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f0f8ff; /* usado en todas las páginas */
-  color: #1f2937; /* text-gray-800 */
+  background-color: #f0f8ff;
+  color: #1f2937;
   min-height: 100vh;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
 
-/* make images & videos responsive */
+/* responsive */
 img,
 video {
   max-width: 100%;
@@ -64,9 +58,6 @@ video {
   .container { max-width: 1536px; }
 }
 
-/* ---------------------------
-   Common utilities used
-   --------------------------- */
 /* Display / layout */
 .block { display: block; }
 .inline-block { display: inline-block; }
@@ -124,7 +115,7 @@ video {
 .rounded-2xl { border-radius: 1rem; }
 .rounded-full { border-radius: 9999px; }
 
-/* Borders */
+/* bordes */
 .border { border-width: 1px; }
 .border-b-2 { border-bottom-width: 2px; }
 .border-t-8 { border-top-width: 8px; }
@@ -135,7 +126,7 @@ video {
 .border-yellow-300 { border-color: rgb(253 224 71); }
 .border-yellow-400 { border-color: rgb(250 204 21); }
 
-/* Backgrounds (usados) */
+/* Backgrounds */
 .bg-white { background-color: rgb(255 255 255); }
 .bg-cyan-700 { background-color: rgb(14 116 144); } /* header */
 .bg-cyan-600 { background-color: rgb(8 145 178); } /* hero / botones */
@@ -146,7 +137,7 @@ video {
 .bg-yellow-400 { background-color: rgb(250 204 21); }
 .bg-black { background-color: rgb(0 0 0); }
 
-/* Text */
+/* Textos */
 .text-center { text-align: center; }
 .text-2xl { font-size: 1.5rem; line-height: 2rem; }
 .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
@@ -161,7 +152,7 @@ video {
 .tracking-wider { letter-spacing: .05em; }
 .leading-relaxed { line-height: 1.625; }
 
-/* Colors (texto) */
+/* Colores del texto */
 .text-white { color: rgb(255 255 255); }
 .text-gray-600 { color: rgb(75 85 99); }
 .text-gray-700 { color: rgb(55 65 81); }
@@ -172,16 +163,16 @@ video {
 .text-yellow-400 { color: rgb(250 204 21); }
 .text-gray-200 { color: rgb(229 231 235); }
 
-/* Shadows */
+/* sombras */
 .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1); }
 .shadow-md { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); }
 .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1); }
 
-/* Filters */
+/* filtros */
 .grayscale { filter: grayscale(100%); }
 .hover\:grayscale-0:hover { filter: grayscale(0%); }
 
-/* Transitions / transforms */
+/* transiciones */
 .transition-all { transition: all 150ms cubic-bezier(.4,0,.2,1); }
 .transition-colors { transition: color .15s, background-color .15s, border-color .15s; }
 .duration-300 { transition-duration: 300ms; }
@@ -250,7 +241,7 @@ input:focus, textarea:focus, select:focus {
   border-color: transparent;
 }
 
-/* Buttons */
+/* botones */
 .btn-primary,
 button[type="submit"] {
   display: inline-block;

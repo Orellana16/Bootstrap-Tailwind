@@ -2,116 +2,238 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bootstrap Pro - IES Mar de Cádiz</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <link rel="stylesheet" href="estilos.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acuario Ocean Wonders - Inicio</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8fafc;
+    }
+
+    /* Colores personalizados para emular el diseño original */
+    .bg-cyan-800 {
+      background-color: #155e75 !important;
+    }
+
+    .bg-cyan-600 {
+      background-color: #0891b2 !important;
+    }
+
+    .text-cyan-600 {
+      color: #0891b2 !important;
+    }
+
+    .text-cyan-100 {
+      color: #cffafe !important;
+    }
+
+    .btn-cyan {
+      background-color: #0891b2;
+      color: white;
+      border-radius: 50px;
+      padding: 12px 30px;
+      font-weight: bold;
+      border: none;
+    }
+
+    .btn-cyan:hover {
+      background-color: #0e7490;
+      color: white;
+      box-shadow: 0 10px 15px -3px rgba(6, 182, 212, 0.2);
+    }
+
+    /* Carrusel personalizado */
+    .carousel-item {
+      height: 65vh;
+      min-height: 400px;
+    }
+
+    .carousel-item img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .overlay-gradiente {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 4rem;
+    }
+
+    /* Navbar styling */
+    .nav-link {
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: white !important;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #facc15 !important;
+      /* Yellow 400 */
+    }
+
+    .card-custom {
+      border-radius: 1.5rem;
+      border: 1px solid #f1f5f9;
+      transition: all 0.3s ease;
+    }
+
+    .card-custom:hover {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+<body class="d-flex flex-column min-vh-100">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-cyan-800 sticky-top shadow-lg py-3">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="bootstrap.html"><i class="bi bi-bootstrap-fill me-2"></i>BOOTSTRAP 5</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <span class="fs-2 me-2">🐬</span>
+        <span class="fw-bold text-uppercase tracking-tighter">Ocean Wonders</span>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto">
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto text-center">
           <li class="nav-item">
-            <a class="nav-link active" href="bootstrap.html">Inicio</a>
+            <a class="nav-link active" href="#">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contacto.html">Contacto</a>
+            <a class="nav-link" href="#">Especies</a>
           </li>
-          
-           <li class="nav-item">
-          <a class="nav-link" href="sobre-nosotros.html">Sobre Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="visitanos.html">Visítanos</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Visítanos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sobre Nosotros</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div id="heroSlider" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="0" class="active"></button>
-      <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="1"></button>
-    </div>
-
+  <div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active"
-        style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://www.famousbirthdays.com/faces/papriiiii-image.jpg'); background-size: cover; background-position: center;">
-        <div class="container d-flex align-items-center justify-content-center text-center" style="min-height: 500px;">
-          <div class="text-white">
-            <h1 class="display-2 fw-bold">Potencia tu Layout</h1>
-            <p class="lead">Interfaces web consistentes con el Grid System de Bootstrap.</p>
+      <div class="carousel-item active" data-bs-interval="6000">
+        <img src="tiburonesFondo.jpg" class="d-block w-100" alt="Tiburones">
+        <div class="overlay-gradiente">
+          <div class="text-center px-3">
+            <h3 class="display-4 fw-bold text-white fst-italic">Majestuosos Tiburones</h3>
+            <p class="text-cyan-100 fs-5">Siente la fuerza de los depredadores más antiguos del planeta.</p>
           </div>
         </div>
       </div>
-
-      <div class="carousel-item"
-        style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://media.cnn.com/api/v1/images/stellar/prod/cnne-212344-monkey-selfie.jpeg?c=16x9&q=w_800,c_fill'); background-size: cover; background-position: center;">
-        <div class="container d-flex align-items-center justify-content-center text-center" style="min-height: 500px;">
-          <div class="text-white">
-            <h1 class="display-2 fw-bold">100% Responsivo</h1>
-            <p class="lead">Tu contenido se adapta de móviles a monitores Ultrawide.</p>
+      <div class="carousel-item" data-bs-interval="6000">
+        <img src="arrecifeFondo.jpg" class="d-block w-100" alt="Arrecifes">
+        <div class="overlay-gradiente">
+          <div class="text-center px-3">
+            <h3 class="display-4 fw-bold text-white fst-italic">Arrecifes de Cristal</h3>
+            <p class="text-cyan-100 fs-5">Un ecosistema lleno de color y vida microscópica.</p>
           </div>
         </div>
       </div>
     </div>
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#heroSlider" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Anterior</span>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon p-4 bg-dark bg-opacity-25 rounded-circle"></span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#heroSlider" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Siguiente</span>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon p-4 bg-dark bg-opacity-25 rounded-circle"></span>
     </button>
   </div>
 
-  <section class="container py-5">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">¿Por qué usar Bootstrap?</h2>
-      <div class="mx-auto bg-primary" style="height: 3px; width: 60px"></div>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-4 text-center">
-        <i class="bi bi-speedometer2 feature-icon"></i>
-        <h4 class="mt-3">Rapidez</h4>
-        <p class="text-muted">
-          Prototipado veloz con componentes listos para producción.
-        </p>
-      </div>
-      <div class="col-md-4 text-center">
-        <i class="bi bi-layers feature-icon"></i>
-        <h4 class="mt-3">Ecosistema</h4>
-        <p class="text-muted">
-          La mayor comunidad y recursos de la web actual.
-        </p>
-      </div>
-      <div class="col-md-4 text-center">
-        <i class="bi bi-universal-access feature-icon"></i>
-        <h4 class="mt-3">Accesibilidad</h4>
-        <p class="text-muted">Cumple con estándares WCAG de forma nativa.</p>
-      </div>
-    </div>
-  </section>
+  <main class="container py-5 flex-grow-1">
 
-  <footer class="bg-dark text-white py-4 mt-5">
-    <div class="container text-center">
-      <p class="mb-0">
-        Diseño de Interfaces Web - IES Mar de Cádiz - 2025/2026
+    <section class="text-center mx-auto mb-5" style="max-width: 800px;">
+      <span class="text-cyan-600 fw-bold text-uppercase small tracking-widest">Experiencia Única</span>
+      <h2 class="display-5 fw-bold text-dark mt-2 mb-4">Bienvenido a las profundidades</h2>
+      <p class="lead text-secondary mb-4">
+        Explora la belleza oculta de nuestros océanos. En <strong>Ocean Wonders</strong> te espera una aventura diseñada
+        para conectar con la naturaleza marina.
       </p>
+      <a href="#" class="btn btn-cyan shadow-lg">
+        Comprar Entradas Online
+      </a>
+    </section>
+
+    <div class="row g-4 mt-4">
+      <div class="col-md-4">
+        <div class="card card-custom h-100 p-4 text-center">
+          <div class="fs-1 mb-3">🎟️</div>
+          <h4 class="fw-bold h5">Pase Rápido</h4>
+          <p class="text-muted small">Evita las colas comprando tus entradas digitales.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card card-custom h-100 p-4 text-center">
+          <div class="fs-1 mb-3">👨‍👩‍👧‍👦</div>
+          <h4 class="fw-bold h5">Zona Familiar</h4>
+          <p class="text-muted small">Actividades interactivas para los más pequeños.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card card-custom h-100 p-4 text-center">
+          <div class="fs-1 mb-3">🌍</div>
+          <h4 class="fw-bold h5">Conservación</h4>
+          <p class="text-muted small">Tu visita apoya al rescate de especies marinas.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-secondary py-5 px-3">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4 text-center text-md-start">
+          <h5 class="text-white fw-bold mb-3">Ocean Wonders</h5>
+          <p class="small">El acuario más grande de la región, comprometido con la educación y el océano.</p>
+        </div>
+        <div class="col-md-4 text-center text-md-start">
+          <h5 class="text-white fw-bold mb-3">Enlaces</h5>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Horarios</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Precios</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Mapa del sitio</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-white fw-bold mb-3 text-center text-md-start">Newsletter</h5>
+          <div class="input-group">
+            <input type="email" class="form-control bg-secondary bg-opacity-10 border-0 text-white shadow-none"
+              placeholder="Email">
+            <button class="btn btn-cyan" type="button">➜</button>
+          </div>
+        </div>
+      </div>
+      <hr class="mt-5 border-secondary">
+      <div class="text-center small opacity-50">
+        &copy; 2026 Acuario Ocean Wonders. Todos los derechos reservados.
+      </div>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

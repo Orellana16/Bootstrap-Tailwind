@@ -2,149 +2,335 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sobre Nosotros - Aprendizaje Bootstrap</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Acuario Ocean Wonders - Sobre Nosotros</title>
+
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <link rel="stylesheet" href="estilos.css" />
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8fafc;
+      color: #1f2937;
+    }
+
+    /* Paleta Ocean */
+    .bg-cyan-800 { background-color: #155e75 !important; }
+    .bg-cyan-50 { background-color: #ecfeff !important; }
+    .text-cyan-600 { color: #0891b2 !important; }
+    .text-cyan-800 { color: #155e75 !important; }
+
+    /* Navbar links estilo Ocean */
+    .nav-link {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff !important;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #facc15 !important;
+    }
+
+    /* Tarjetas principales */
+    .card-ocean {
+      border: 1px solid #f1f5f9;
+      border-radius: 1.75rem;
+      overflow: hidden;
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.10);
+      transition: all 0.3s ease;
+      background: #fff;
+    }
+
+    .card-ocean:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 45px rgba(0, 0, 0, 0.13);
+    }
+
+    /* Borde inferior como en Tailwind (border-b-4) */
+    .bottom-accent-cyan { border-bottom: 4px solid #06b6d4; }
+    .bottom-accent-blue { border-bottom: 4px solid #3b82f6; }
+    .bottom-accent-yellow { border-bottom: 4px solid #facc15; }
+
+    /* Hero “panel” blanco */
+    .panel {
+      background: #fff;
+      border-radius: 1.25rem;
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Team cards */
+    .team-card img {
+      transition: transform 0.5s ease;
+    }
+
+    .team-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .team-img-wrap {
+      height: 260px;
+      background: #e2e8f0;
+      overflow: hidden;
+    }
+
+    /* Línea decorativa */
+    .line {
+      width: 96px;
+      height: 4px;
+      background: #06b6d4;
+      border-radius: 999px;
+      margin: 1rem auto 0;
+    }
+
+    /* Bloque compromiso grande */
+    .commitment {
+      border-radius: 3rem;
+      border: 1px solid rgba(8, 145, 178, 0.15);
+    }
+
+    /* Botón oscuro / ocean */
+    .btn-dark-ocean {
+      background: #0f172a;
+      border: none;
+      color: #fff;
+      border-radius: 999px;
+      font-weight: 800;
+      padding: 0.75rem 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-dark-ocean:hover {
+      background: #0e7490;
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(6, 182, 212, 0.25);
+    }
+
+    /* “Subida” de la sección de Misión/Visión/Valores (como -mt-20) */
+    .lift-up {
+      margin-top: -4.5rem;
+      position: relative;
+      z-index: 2;
+    }
+  </style>
 </head>
 
-<body class="bg-light">
+<body class="d-flex flex-column min-vh-100">
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="bootstrap.html"><i class="bi bi-bootstrap-fill me-2"></i>BOOTSTRAP 5</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="bootstrap.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contacto.html">Contacto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="sobre-nosotros.html">Sobre Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="visitanos.html">Prácticas</a>
-          </li>
-        </ul>
+  <!-- NAVBAR -->
+  <header class="bg-cyan-800 text-white sticky-top shadow-lg">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-cyan-800">
+      <div class="container py-2">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="bootstrap.html">
+          <span class="fs-2">🐬</span>
+          <span class="fw-bold text-uppercase" style="letter-spacing:-0.02em;">Ocean Wonders</span>
+        </a>
+
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+          data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto text-center">
+            <li class="nav-item"><a class="nav-link" href="bootstrap.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="especies.html">Especies</a></li>
+            <li class="nav-item"><a class="nav-link" href="visitanos.html">Visítanos</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link active" href="sobre-nosotros.html">Sobre Nosotros</a></li>
+          </ul>
+        </div>
       </div>
+    </nav>
+  </header>
+
+  <!-- HERO PANEL -->
+  <section class="container my-4 my-md-5">
+    <div class="panel p-4 p-md-5 text-center">
+      <h2 class="display-6 fw-bold text-cyan-800 mb-2">Sobre Ocean Wonders</h2>
+      <p class="text-secondary mx-auto mb-0" style="max-width: 900px;">
+        Somos un pequeño equipo dedicado a cuidar, estudiar y enseñar sobre la vida marina. Nuestro objetivo
+        es crear experiencias que conecten a las personas con el océano, siempre priorizando el bienestar de las especies.
+      </p>
     </div>
-  </nav>
+  </section>
 
-  <main class="container py-5">
+  <main class="container flex-grow-1 pb-5">
 
-    <!-- Hero -->
-    <section class="text-center mb-5">
-      <h2 class="display-4 fw-bold text-primary">Aprendiendo Bootstrap 5</h2>
-      <p class="text-muted">Somos un grupo de estudiantes y entusiastas del desarrollo web, dedicados a aprender y practicar Bootstrap para crear interfaces modernas y funcionales.</p>
+    <!-- Misión / Visión / Valores (subida) -->
+    <section class="row g-4 lift-up mb-5">
+      <div class="col-md-4">
+        <div class="card-ocean bottom-accent-cyan p-4 p-md-5 text-center h-100">
+          <div class="rounded-circle d-inline-flex align-items-center justify-content-center mx-auto mb-3"
+            style="width:64px;height:64px;background:#cffafe;font-size:1.5rem;">🎯</div>
+          <h3 class="h5 fw-bold text-dark mb-2">Misión</h3>
+          <p class="text-secondary small mb-0" style="line-height:1.7;">
+            Conservar y mostrar la biodiversidad marina de forma responsable, inspirando a las nuevas generaciones.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card-ocean bottom-accent-blue p-4 p-md-5 text-center h-100">
+          <div class="rounded-circle d-inline-flex align-items-center justify-content-center mx-auto mb-3"
+            style="width:64px;height:64px;background:#dbeafe;font-size:1.5rem;">👁️</div>
+          <h3 class="h5 fw-bold text-dark mb-2">Visión</h3>
+          <p class="text-secondary small mb-0" style="line-height:1.7;">
+            Ser el referente líder en conservación marina y rescate de especies en nuestra costa.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card-ocean bottom-accent-yellow p-4 p-md-5 text-center h-100">
+          <div class="rounded-circle d-inline-flex align-items-center justify-content-center mx-auto mb-3"
+            style="width:64px;height:64px;background:#fef9c3;font-size:1.5rem;">🤝</div>
+          <h3 class="h5 fw-bold text-dark mb-2">Valores</h3>
+          <p class="text-secondary small mb-0" style="line-height:1.7;">
+            Bienestar animal por encima de todo, rigor científico y educación para todos.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- Misión / Visión / Valores -->
-    <section class="row text-center mb-5">
-      <div class="col-md-4 mb-3">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title text-primary">Misión</h5>
-            <p class="card-text">Aprender y aplicar Bootstrap 5 de manera práctica y clara, creando proyectos propios y colaborativos.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title text-primary">Visión</h5>
-            <p class="card-text">Ser competentes en desarrollo front-end usando Bootstrap, creando diseños atractivos y adaptables.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title text-primary">Valores</h5>
-            <ul class="list-unstyled mb-0">
-              <li>• Curiosidad y aprendizaje constante</li>
-              <li>• Colaboración en proyectos</li>
-              <li>• Creatividad en diseños</li>
-              <li>• Buenas prácticas de código</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    <!-- Título equipo -->
+    <section class="text-center mb-4 mb-md-5">
+      <h3 class="display-6 fw-bold text-dark mb-0">El Corazón de Ocean Wonders</h3>
+      <div class="line"></div>
     </section>
 
     <!-- Equipo -->
-    <!-- Equipo -->
-<section class="mb-5">
-  <h3 class="mb-4 text-center text-primary">Nuestro equipo</h3>
-  <div class="row g-4 justify-content-center">
-    <div class="col-sm-6 col-lg-3 text-center">
-      <div class="card h-100 shadow-sm">
-        <img src="https://placehold.co/200x200/006994/ffffff?text=Ángel" class="card-img-top rounded-circle mx-auto mt-3" style="width:120px;height:120px;" alt="Ángel - Frontend">
-        <div class="card-body">
-          <h5 class="card-title">Ángel</h5>
-          <p class="card-text">Estudiante de desarrollo web — Frontend y componentes Bootstrap.</p>
+    <section class="row g-4 mb-5">
+      <div class="col-sm-6 col-lg-3">
+        <div class="card-ocean team-card h-100">
+          <div class="team-img-wrap">
+            <img src="https://placehold.co/400x500/0891b2/ffffff?text=%C3%81ngel" alt="Ángel"
+              class="w-100 h-100 object-fit-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="h5 fw-bold text-dark mb-1">Ángel</h4>
+            <p class="text-cyan-600 small fw-bold text-uppercase mb-3" style="letter-spacing:0.2em; font-size:0.7rem;">
+              Biólogo Marino
+            </p>
+            <p class="text-secondary small fst-italic mb-0" style="line-height:1.6;">
+              "Mi vida es el mar y mi misión es que otros aprendan a respetarlo."
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-sm-6 col-lg-3 text-center">
-      <div class="card h-100 shadow-sm">
-        <img src="https://placehold.co/200x200/008b8b/ffffff?text=Manuel" class="card-img-top rounded-circle mx-auto mt-3" style="width:120px;height:120px;" alt="Manuel - Backend">
-        <div class="card-body">
-          <h5 class="card-title">Manuel Tampon</h5>
-          <p class="card-text">Estudiante de DAW — Integración de Bootstrap con proyectos y prácticas.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-lg-3 text-center">
-      <div class="card h-100 shadow-sm">
-        <img src="https://placehold.co/200x200/20b2aa/ffffff?text=Frederic" class="card-img-top rounded-circle mx-auto mt-3" style="width:120px;height:120px;" alt="Frederic - Diseño">
-        <div class="card-body">
-          <h5 class="card-title">Frederic Sadibou</h5>
-          <p class="card-text">Estudiante de diseño web — Encargado de estilos, colores y diseño visual.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-lg-3 text-center">
-      <div class="card h-100 shadow-sm">
-        <img src="https://placehold.co/200x200/ff7f50/ffffff?text=David" class="card-img-top rounded-circle mx-auto mt-3" style="width:120px;height:120px;" alt="David - Testing">
-        <div class="card-body">
-          <h5 class="card-title">David Orellana</h5>
-          <p class="card-text">Estudiante de QA y pruebas — Encargado de testear componentes y verificar funcionalidad.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-    <!-- Qué hacemos -->
-    <section class="mb-5">
-      <h3 class="text-center text-primary mb-3">Qué hacemos</h3>
-      <ul class="list-group list-group-flush mx-auto" style="max-width:600px;">
-        <li class="list-group-item">Creamos páginas web usando Bootstrap 5.</li>
-        <li class="list-group-item">Probamos componentes: Navbar, Cards, Modals, Forms.</li>
-        <li class="list-group-item">Aprendemos buenas prácticas en diseño web responsive.</li>
-      </ul>
+      <div class="col-sm-6 col-lg-3">
+        <div class="card-ocean team-card h-100">
+          <div class="team-img-wrap">
+            <img src="https://placehold.co/400x500/0e7490/ffffff?text=Manuel" alt="Manuel"
+              class="w-100 h-100 object-fit-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="h5 fw-bold text-dark mb-1">Manuel Tocón</h4>
+            <p class="text-cyan-600 small fw-bold text-uppercase mb-3" style="letter-spacing:0.2em; font-size:0.7rem;">
+              Técnico Superior
+            </p>
+            <p class="text-secondary small fst-italic mb-0" style="line-height:1.6;">
+              Experto en sistemas de soporte vital y nutrición de especies.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-3">
+        <div class="card-ocean team-card h-100">
+          <div class="team-img-wrap">
+            <img src="https://placehold.co/400x500/155e75/ffffff?text=Frederic" alt="Frederic"
+              class="w-100 h-100 object-fit-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="h5 fw-bold text-dark mb-1">Frederic Sadibou</h4>
+            <p class="text-cyan-600 small fw-bold text-uppercase mb-3" style="letter-spacing:0.2em; font-size:0.7rem;">
+              Comunicación
+            </p>
+            <p class="text-secondary small fst-italic mb-0" style="line-height:1.6;">
+              Especialista en acercar la ciencia a los más pequeños de forma divertida.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-3">
+        <div class="card-ocean h-100 p-4 text-center">
+          <img src="https://placehold.co/200x200/ff7f50/ffffff?text=David" alt="David - Voluntariado"
+            class="rounded-circle mx-auto mb-3" style="width: 128px; height: 128px; object-fit: cover;">
+          <h4 class="h5 fw-bold text-dark mb-2">David Orellana</h4>
+          <p class="text-secondary small mb-0" style="line-height:1.6;">
+            Coordinador de voluntariado — Gestiona programas de voluntariado y actividades comunitarias.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- Contacto -->
-    <section class="text-center">
-      <p>¿Quieres colaborar o preguntar algo sobre Bootstrap? Escríbenos.</p>
-      <a href="contacto.html" class="btn btn-primary btn-lg">Contacto / Consultas</a>
+    <!-- Compromiso -->
+    <section class="commitment bg-cyan-50 p-4 p-md-5 p-lg-5">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-md-7">
+          <h3 class="h3 fw-bold text-dark mb-4">Compromiso Ocean Wonders</h3>
+
+          <div class="d-flex flex-column gap-3">
+            <div class="d-flex gap-3 align-items-start">
+              <div class="fw-bold fst-italic" style="color:#0891b2; font-size:1.6rem;">01</div>
+              <p class="mb-0 text-secondary" style="line-height:1.7;">
+                <strong class="text-dark">Educación Inmersiva:</strong> No solo ves peces, aprendes por qué son importantes.
+              </p>
+            </div>
+
+            <div class="d-flex gap-3 align-items-start">
+              <div class="fw-bold fst-italic" style="color:#0891b2; font-size:1.6rem;">02</div>
+              <p class="mb-0 text-secondary" style="line-height:1.7;">
+                <strong class="text-dark">Investigación:</strong> Colaboramos activamente con universidades locales.
+              </p>
+            </div>
+
+            <div class="d-flex gap-3 align-items-start">
+              <div class="fw-bold fst-italic" style="color:#0891b2; font-size:1.6rem;">03</div>
+              <p class="mb-0 text-secondary" style="line-height:1.7;">
+                <strong class="text-dark">Sostenibilidad:</strong> Instalaciones alimentadas por energía limpia.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="card-ocean p-4 p-md-5 text-center" style="box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);">
+            <h4 class="h4 fw-bold fst-italic mb-3">¿Quieres formar parte?</h4>
+            <p class="text-secondary small mb-4" style="line-height:1.7;">
+              Buscamos mentes apasionadas para prácticas, voluntariado o colaboraciones científicas.
+            </p>
+            <a href="contacto.html" class="btn btn-dark-ocean">Unirse al Equipo</a>
+          </div>
+        </div>
+      </div>
     </section>
 
   </main>
 
-  <footer class="bg-dark text-white text-center py-4 mt-5">
-    <p class="mb-0">&copy; 2026 Aprendiendo Bootstrap. Todos los derechos reservados.</p>
+  <!-- FOOTER -->
+  <footer class="bg-dark text-secondary py-5 mt-auto">
+    <div class="container text-center px-4">
+      <p class="text-white fw-bold mb-2 text-uppercase fst-italic" style="letter-spacing:0.2em;">Ocean Wonders</p>
+      <p class="small mb-4">Uniendo personas y océanos desde 2026.</p>
+      <div class="pt-4 border-top border-secondary border-opacity-25 small text-uppercase"
+        style="letter-spacing:-0.02em; font-size:0.7rem;">
+        &copy; 2026 Acuario Ocean Wonders. El Puerto de Santa María.
+      </div>
+    </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

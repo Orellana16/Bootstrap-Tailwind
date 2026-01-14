@@ -18,11 +18,25 @@
     }
 
     /* Paleta Ocean */
-    .bg-cyan-800 { background-color: #155e75 !important; }
-    .bg-cyan-900 { background-color: #083344 !important; }
-    .bg-cyan-600 { background-color: #0891b2 !important; }
-    .text-cyan-50 { color: #ecfeff !important; }
-    .text-cyan-100 { color: #cffafe !important; }
+    .bg-cyan-800 {
+      background-color: #155e75 !important;
+    }
+
+    .bg-cyan-900 {
+      background-color: #083344 !important;
+    }
+
+    .bg-cyan-600 {
+      background-color: #0891b2 !important;
+    }
+
+    .text-cyan-50 {
+      color: #ecfeff !important;
+    }
+
+    .text-cyan-100 {
+      color: #cffafe !important;
+    }
 
     /* Navbar links estilo Ocean */
     .nav-link {
@@ -32,6 +46,7 @@
       font-weight: 600;
       color: #fff !important;
     }
+
     .nav-link:hover,
     .nav-link.active {
       color: #facc15 !important;
@@ -45,23 +60,27 @@
       color: #fff;
       background-color: #083344;
     }
+
     .hero-bg {
       position: absolute;
       inset: 0;
       z-index: 0;
     }
+
     .hero-bg img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       opacity: 0.40;
     }
+
     .hero-bg::after {
       content: "";
       position: absolute;
       inset: 0;
       background: linear-gradient(to top, rgba(8, 51, 68, 0.95) 0%, rgba(8, 51, 68, 0.2) 55%, rgba(8, 51, 68, 0.70) 100%);
     }
+
     .hero .content {
       position: relative;
       z-index: 1;
@@ -76,12 +95,19 @@
       transition: all 0.3s ease;
       background: #fff;
     }
+
     .card-ocean:hover {
       transform: translateY(-4px);
       box-shadow: 0 22px 45px rgba(0, 0, 0, 0.13);
     }
-    .top-accent-cyan { border-top: 8px solid #06b6d4; }
-    .top-accent-yellow { border-top: 8px solid #facc15; }
+
+    .top-accent-cyan {
+      border-top: 8px solid #06b6d4;
+    }
+
+    .top-accent-yellow {
+      border-top: 8px solid #facc15;
+    }
 
     /* Inputs estilo soft */
     .form-control,
@@ -92,6 +118,7 @@
       padding: 0.95rem 1rem;
       font-size: 0.95rem;
     }
+
     .form-control:focus,
     .form-select:focus {
       border-color: #0891b2;
@@ -109,6 +136,7 @@
       font-weight: 800;
       transition: all 0.3s ease;
     }
+
     .btn-cyan:hover {
       background-color: #0e7490;
       color: white;
@@ -122,6 +150,7 @@
       overflow: hidden;
       box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
     }
+
     .map-wrap img {
       width: 100%;
       height: 170px;
@@ -129,6 +158,7 @@
       filter: grayscale(1);
       transition: all 0.7s ease;
     }
+
     .map-wrap:hover img {
       filter: grayscale(0);
       transform: scale(1.08);
@@ -217,7 +247,8 @@
               <div>
                 <div class="fw-bold text-dark">Atención Telefónica</div>
                 <div class="text-secondary small">+34 956 123 456</div>
-                <div class="small fw-bold text-uppercase mt-1" style="color:#0891b2; letter-spacing:0.12em; font-size:0.7rem;">
+                <div class="small fw-bold text-uppercase mt-1"
+                  style="color:#0891b2; letter-spacing:0.12em; font-size:0.7rem;">
                   L-D: 10h a 20h
                 </div>
               </div>
@@ -233,7 +264,11 @@
           </div>
 
           <div class="mt-4 map-wrap">
-            <img src="https://placehold.co/900x500/0891b2/ffffff?text=Ver+en+Google+Maps" alt="Mapa">
+            <iframe
+              src="
+            https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6272.251508068092!2d-3.6921698848911246!3d38.18375292030605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6e9e99ed5290c1%3A0x3a15d3cf3f7c22d!2zMjMyMTAgR3VhcnJvbcOhbiwgSmHDqW4!5e0!3m2!1ses!2ses!4v1768383221702!5m2!1ses!2ses"
+              width="100%" height="100%" style="border:0;" allowfullscreen="true" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>

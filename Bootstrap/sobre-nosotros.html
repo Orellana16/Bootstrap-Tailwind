@@ -19,10 +19,21 @@
     }
 
     /* Paleta Ocean */
-    .bg-cyan-800 { background-color: #155e75 !important; }
-    .bg-cyan-50 { background-color: #ecfeff !important; }
-    .text-cyan-600 { color: #0891b2 !important; }
-    .text-cyan-800 { color: #155e75 !important; }
+    .bg-cyan-800 {
+      background-color: #155e75 !important;
+    }
+
+    .bg-cyan-50 {
+      background-color: #ecfeff !important;
+    }
+
+    .text-cyan-600 {
+      color: #0891b2 !important;
+    }
+
+    .text-cyan-800 {
+      color: #155e75 !important;
+    }
 
     /* Navbar links estilo Ocean */
     .nav-link {
@@ -54,9 +65,17 @@
     }
 
     /* Borde inferior como en Tailwind (border-b-4) */
-    .bottom-accent-cyan { border-bottom: 4px solid #06b6d4; }
-    .bottom-accent-blue { border-bottom: 4px solid #3b82f6; }
-    .bottom-accent-yellow { border-bottom: 4px solid #facc15; }
+    .bottom-accent-cyan {
+      border-bottom: 4px solid #06b6d4;
+    }
+
+    .bottom-accent-blue {
+      border-bottom: 4px solid #3b82f6;
+    }
+
+    .bottom-accent-yellow {
+      border-bottom: 4px solid #facc15;
+    }
 
     /* Hero “panel” blanco */
     .panel {
@@ -152,12 +171,13 @@
   </header>
 
   <!-- HERO PANEL -->
-  <section class="container my-4 my-md-5">
+  <section class="container my-4 my-md-4">
     <div class="panel p-4 p-md-5 text-center">
       <h2 class="display-6 fw-bold text-cyan-800 mb-2">Sobre Ocean Wonders</h2>
       <p class="text-secondary mx-auto mb-0" style="max-width: 900px;">
         Somos un pequeño equipo dedicado a cuidar, estudiar y enseñar sobre la vida marina. Nuestro objetivo
-        es crear experiencias que conecten a las personas con el océano, siempre priorizando el bienestar de las especies.
+        es crear experiencias que conecten a las personas con el océano, siempre priorizando el bienestar de las
+        especies.
       </p>
     </div>
   </section>
@@ -165,7 +185,7 @@
   <main class="container flex-grow-1 pb-5">
 
     <!-- Misión / Visión / Valores (subida) -->
-    <section class="row g-4 lift-up mb-5">
+    <section class="row g-4 lift-up mb-5 mt-1">
       <div class="col-md-4">
         <div class="card-ocean bottom-accent-cyan p-4 p-md-5 text-center h-100">
           <div class="rounded-circle d-inline-flex align-items-center justify-content-center mx-auto mb-3"
@@ -263,15 +283,22 @@
       </div>
 
       <div class="col-sm-6 col-lg-3">
-        <div class="card-ocean h-100 p-4 text-center">
-          <img src="https://placehold.co/200x200/ff7f50/ffffff?text=David" alt="David - Voluntariado"
-            class="rounded-circle mx-auto mb-3" style="width: 128px; height: 128px; object-fit: cover;">
-          <h4 class="h5 fw-bold text-dark mb-2">David Orellana</h4>
-          <p class="text-secondary small mb-0" style="line-height:1.6;">
-            Coordinador de voluntariado — Gestiona programas de voluntariado y actividades comunitarias.
-          </p>
+        <div class="card-ocean team-card h-100">
+          <div class="team-img-wrap">
+
+            <img src="https://placehold.co/400x500/ff7f50/ffffff?text=David" alt="David"
+              class="w-100 h-100 object-fit-cover">
+          </div>
+          <div class="p-4 text-center">
+            <h4 class="h5 fw-bold text-dark mb-1">David Orellana</h4>
+            <p class="text-cyan-600 small fw-bold text-uppercase mb-3" style="letter-spacing:0.2em; font-size:0.7rem;">
+              Jefe de Voluntariado
+            </p>
+            <p class="text-secondary small fst-italic mb-0" style="line-height:1.6;">
+              Gestiona programas de voluntariado y actividades comunitarias.
+            </p>
+          </div>
         </div>
-      </div>
     </section>
 
     <!-- Compromiso -->
@@ -284,7 +311,8 @@
             <div class="d-flex gap-3 align-items-start">
               <div class="fw-bold fst-italic" style="color:#0891b2; font-size:1.6rem;">01</div>
               <p class="mb-0 text-secondary" style="line-height:1.7;">
-                <strong class="text-dark">Educación Inmersiva:</strong> No solo ves peces, aprendes por qué son importantes.
+                <strong class="text-dark">Educación Inmersiva:</strong> No solo ves peces, aprendes por qué son
+                importantes.
               </p>
             </div>
 

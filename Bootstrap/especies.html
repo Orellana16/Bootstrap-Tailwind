@@ -28,6 +28,7 @@
       background-color: #f8fafc;
       scroll-behavior: smooth;
     }
+
     /*fondos*/
     .bg-ocean-800 {
       background: var(--ocean-800) !important;
@@ -44,6 +45,7 @@
     .bg-ocean-soft {
       background: var(--ocean-soft) !important;
     }
+
     /*etiquetas animales*/
     .badge-small {
       font-size: 10px;
@@ -51,6 +53,7 @@
       font-weight: 700;
       letter-spacing: .08em;
     }
+
     /*zoom y animacion*/
     .species-card img {
       transition: transform .5s ease;
@@ -59,16 +62,19 @@
     .species-card:hover img {
       transform: scale(1.05);
     }
+
     /*imagenes height portada*/
     .img-cover-56 {
       height: 14rem;
       object-fit: cover;
     }
+
     /*hero ocupando todo*/
     .hero {
       position: relative;
       overflow: hidden;
     }
+
     /*imagen de fondo */
     .hero .hero-bg {
       position: absolute;
@@ -82,22 +88,26 @@
       object-fit: cover;
       opacity: .20;
     }
-/*Overlay encima de la imagen*/
+
+    /*Overlay encima de la imagen*/
     .hero .hero-overlay {
       position: absolute;
       inset: 0;
       background: rgba(11, 59, 75, .35);
     }
-/*contenido del hero encima de todo*/
+
+    /*contenido del hero encima de todo*/
     .hero .hero-content {
       position: relative;
       z-index: 1;
     }
+
     /*efecto cristal*/
     .glass {
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
     }
+
     /*degradado*/
     .hr-gradient-cyan {
       height: 4px;
@@ -353,18 +363,34 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-dark text-secondary py-5 border-top border-secondary border-opacity-25 mt-5">
-    <div class="container text-center">
-      <p class="text-white fw-bold mb-2 text-uppercase fst-italic" style="letter-spacing:.15em">Ocean Wonders</p>
-
-      <div class="d-flex justify-content-center gap-4 my-3" style="font-size:.85rem">
-        <a href="#" class="link-secondary text-decoration-none hover-link">Instagram</a>
-        <a href="#" class="link-secondary text-decoration-none hover-link">Youtube</a>
-        <a href="#" class="link-secondary text-decoration-none hover-link">Facebook</a>
+  <footer class="bg-dark text-secondary py-5 px-3">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4 text-center text-md-start">
+          <h5 class="text-white fw-bold mb-3">Ocean Wonders</h5>
+          <p class="small">El acuario más grande de la región, comprometido con la educación y el océano.</p>
+        </div>
+        <div class="col-md-4 text-center text-md-start">
+          <h5 class="text-white fw-bold mb-3">Enlaces</h5>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Horarios</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Precios</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Mapa del sitio</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-white fw-bold mb-3 text-center text-md-start">Newsletter</h5>
+          <div class="input-group">
+            <input type="email" class="form-control bg-secondary bg-opacity-10 border-0 text-white shadow-none"
+              placeholder="Email">
+            <button class="btn btn-cyan" type="button">➜</button>
+          </div>
+        </div>
       </div>
-
-      <p class="mb-0" style="font-size:10px; letter-spacing:.08em" class="text-uppercase">&copy; 2026 Acuario Ocean
-        Wonders.</p>
+      <hr class="mt-5 border-secondary">
+      <div class="text-center small opacity-50">
+        &copy; 2026 Acuario Ocean Wonders. Todos los derechos reservados.
+      </div>
     </div>
   </footer>
 
